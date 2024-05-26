@@ -1,5 +1,6 @@
 package br.com.martines.screenmatch.principal;
 
+import br.com.martines.screenmatch.model.DadosEpisodios;
 import br.com.martines.screenmatch.model.DadosSerie;
 import br.com.martines.screenmatch.model.DadosTemporada;
 import br.com.martines.screenmatch.service.ConsumoApi;
@@ -33,5 +34,14 @@ public class Principal {
             temporadas.add(dadosTemporada);
         }
         temporadas.forEach(System.out::println);
+
+//        for (int i = 0; i < dados.totalTemporadas(); i++) {
+//            List<DadosEpisodios> episodiosTemporada = temporadas.get(i).episodios();
+//            for (int j = 0; j < episodiosTemporada.size(); j++ ) {
+//                System.out.println(episodiosTemporada.get(j).titulo());
+//            }
+//        }
+
+        temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));;
     }
 }
